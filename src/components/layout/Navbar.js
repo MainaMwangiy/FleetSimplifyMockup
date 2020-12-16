@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Button } from "reactstrap";
+import logo from "../../img/logo.svg";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -10,7 +11,7 @@ class Navbar extends Component {
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
-              InstaDriver
+              <img src={logo}></img>
             </a>
           </div>
           <div class="collapse navbar-collapse">
@@ -54,20 +55,45 @@ class Navbar extends Component {
           <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                Menu
-                <button
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
+                <a
+                  class="nav-link active navbar-light bg-light"
+                  aria-current="page"
+                  href="#"
+                  style={{ color: "black" }}
                 >
-                  <span
-                    class="navbar-toggler-icon"
-                    style={{ color: "white" }}
-                  ></span>
-                </button>
+                  Menu &nbsp;&nbsp;
+                  <Button
+                    id="mymenu"
+                    type="button"
+                    class="dropdown-toggle navbar-light bg-light "
+                    data-bs-toggle="dropdown"
+                    aria-current="page"
+                    aria-expanded="false"
+                    style={{
+                      border: "none",
+                      backgroundColor: "white",
+                    }}
+                  >
+                    <span class="navbar-toggler-icon navbar-light bg-light"></span>
+                  </Button>
+                  <ul class="dropdown-menu" aria-labelledby="mymenu">
+                    <li>
+                      <a class="dropdown-item active bg-dark" href="#">
+                        Action
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        Another action
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        Something else here
+                      </a>
+                    </li>
+                  </ul>
+                </a>
               </li>
             </ul>
           </div>
